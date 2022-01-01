@@ -1,4 +1,5 @@
-#JUAN L覲EZ IGLESIAS Y DANIEL L覲EZ GONZ罫EZ
+#JUAN L脫PEZ IGLESIAS Y DANIEL L脫PEZ GONZ脕LEZ
+## Version final
 
 .data
 #######################
@@ -92,7 +93,7 @@ Division:
 	bnez $t3, Stop			#si es la primera iteracion se ha de codificar el 0
 sigNum:	mfhi $t4			#resto en t4 y cociente en a0 para obtener sig. digito
 	mflo $a0			
-	add $t4,$t4,'0'			#Se codifica el n煤mero en ASCII
+	add $t4,$t4,'0'			#Se codifica el n脙潞mero en ASCII
 	div  $t7,$t4,10 
 		
 	blt $t7, $zero, overflow2	#comprobar si hay overflow
@@ -113,7 +114,7 @@ Stop:
 	addi $sp, $sp, 4
 	jr $ra
 	
-#Invierte la cadena de la direccion dada y se a帽ade signo si es negativo
+#Invierte la cadena de la direccion dada y se a脙卤ade signo si es negativo
 #$a1 Direccion cadena a invertir
 #$a2 indicador signo
 InvierteCadena:
@@ -128,7 +129,7 @@ bucle:	add $t2,$t1, $a1
 desapila:
  #Ya he apilado toda la cadena, la desapilo y la voy guardando  
  	li $t2, 0		#contador
- 	beq $a2,$zero, bucle2	#si a2 es 1 a帽adir signo antes del n煤mero y a帽adir 1 
+ 	beq $a2,$zero, bucle2	#si a2 es 1 a脙卤adir signo antes del n脙潞mero y a脙卤adir 1 
  	addi $t1, $t1, 1	#al contador para la pos y al contador de longitud
  	addi $t4, $zero, 45
  	add $t3,$t2, $a1
@@ -189,8 +190,8 @@ strSearch:
 
 
 
-#$a1: Direcci髇 del string de b鷖queda
-#$a2: Car醕ter a buscar
+#$a1: Direcci贸n del string de b煤squeda
+#$a2: Car谩cter a buscar
 containsChar:
 	add $t0,$zero,$zero
 	lb $t2,0($a1)
@@ -218,8 +219,8 @@ NoCoincide_v4:
 	
 	
 	
-#$a0: Direcci髇 de string de b鷖queda
-#$a1: Direcci髇 del string con los caracteres a buscar
+#$a0: Direcci贸n de string de b煤squeda
+#$a1: Direcci贸n del string con los caracteres a buscar
 containsAnyChar:
 	add $t0,$zero,$zero
 	add $t1,$zero,$zero
@@ -252,8 +253,8 @@ NoCoincide:
 	
 	
 	
-#$a0:Direcci髇 del string de b鷖queda
-#$a1:Direcci髇 del string con los caracteres a buscar0
+#$a0:Direcci贸n del string de b煤squeda
+#$a1:Direcci贸n del string con los caracteres a buscar0
 #$a2: numero de caracteres a encontrar en $a0	
 containsSomeChars:
 #mfc0 $k0, $13 # get EPC in $k0
@@ -304,8 +305,8 @@ NoCoincide_v2:
 
 	
 
-#$a0 - Direcci髇 del string de b鷖queda
-#$a1 - Direcci髇 del string con los caracteres a buscar	
+#$a0 - Direcci贸n del string de b煤squeda
+#$a1 - Direcci贸n del string con los caracteres a buscar	
 containsAllChars:
 	add $t0,$zero,$zero
 	add $t1,$zero,$zero
@@ -339,8 +340,8 @@ NoCoincide_v3:
 	jr $ra
 	
 	
-#$a0: Direcci髇 del string de b鷖queda
-#$a1: Direcci髇 del string con los caracteres a buscar
+#$a0: Direcci贸n del string de b煤squeda
+#$a1: Direcci贸n del string con los caracteres a buscar
 containsOnlyChars:
 	add $t0,$zero,$zero
 	add $t1,$zero,$zero
